@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>EV Connect - Smart Charging Network</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  </head>
+
+  <body class="bg-gray-100 text-gray-900">
+   
+   <!-- Header -->
+   <header class="bg-blue-900 text-white p-6 flex flex-col md:flex-row justify-between items-center">
+      <div>
+        <h1 class="text-3xl font-bold">⚡ EV Connect</h1>
+      </div>
+
+      <!-- Navigation Menu -->
+      <nav class="mt-4 md:mt-0 space-x-6">
+        <a href="home.html" class="hover:underline text-white">Home</a>
+        <a href="station.html" class="hover:underline text-white">Station</a>
+        <a href="#contact" class="hover:underline text-white">Contact</a>
+      </nav>
+    </header>
+
+   <!-- Hero Section -->
+   <section class="relative p-6 bg-cover bg-center bg-no-repeat h-[70vh]" 
+            style="background-image: url('https://images.unsplash.com/photo-1618182955099-7a5178e87b8b?auto=format&fit=crop&w=1920&q=80');">
+      <!-- Dark overlay -->
+      <div class="absolute inset-0 bg-black bg-opacity-60"></div>
+
+      <!-- Hero Text -->
+      <div class="relative z-10 flex flex-col justify-center items-center h-full text-center text-white">
+        <h2 class="text-5xl font-bold mb-4">The Future of EV Charging is Here</h2>
+        <p class="text-xl mb-6">Discover the smartest and fastest EV charging experience with EV Connect.</p>
+        <a href="#stations" class="bg-green-500 hover:bg-green-600 text-black font-semibold py-3 px-6 rounded-xl transition">
+          Explore Stations
+        </a>
+      </div>
+   </section>
+
+   <!-- About Us -->
+  
+   <!-- 🌍 How the System Works -->
+   <section class="p-6 bg-gray-50">
+      <h2 class="text-3xl font-bold mb-6 text-center text-green-700">🌍 How the System Works</h2>
+      <div class="max-w-5xl mx-auto space-y-10">
+
+        <!-- 1 -->
+        <div>
+          <h3 class="text-xl font-semibold mb-2">⚙️ 1. Real-Time Location Tracking</h3>
+          <ul class="list-disc ml-6 space-y-1">
+            <!-- <li>📡 Each charging station uses an <strong>ESP32 microcontroller</strong> with a <strong>Neo-6M GPS module</strong>.</li> -->
+            <li>🛰️ The GPS continuously updates the station’s <strong>latitude and longitude</strong>.</li>
+            <li>🌐 These coordinates are displayed on the <strong>website map</strong> in real time.</li>
+            <li>🚗 Drivers can easily locate the <strong>nearest charging stations</strong>.</li>
+          </ul>
+        </div>
+
+        <!-- 2 -->
+        <div>
+          <h3 class="text-xl font-semibold mb-2">🧭 2. Station Status & Queue Management</h3>
+          <ul class="list-disc ml-6 space-y-1">
+            <li>🟢 Website displays each station’s <strong>status</strong>: Free, Busy, or Reserved.</li>
+            <li>👥 A <strong>queue box</strong> shows the number of waiting users.</li>
+            <li>⏱️ Helps drivers plan charging and choose stations with <strong>shorter wait times</strong>.</li>
+          </ul>
+        </div>
+
+        <!-- 3 -->
+        <div>
+          <h3 class="text-xl font-semibold mb-2">💻 3. Online Reservation System</h3>
+          <ul class="list-disc ml-6 space-y-1">
+            <li>🚘 Users can select an available station on the website.</li>
+            <li>🔘 On clicking <strong>“Reserve”</strong>, a unique <strong>password (OTP)</strong> is generated.</li>
+            <li>🔒 The station status changes to <strong>“Reserved”</strong>, blocking others from booking.</li>
+          </ul>
+        </div>
+
+        <!-- 4 -->
+        <div>
+          <h3 class="text-xl font-semibold mb-2">🔐 4. Secure Authentication & Charging Start</h3>
+          <ul class="list-disc ml-6 space-y-1">
+            <li>🏁 On arrival, the user enters the generated password via the website or local interface.</li>
+            <li>⚡ The <strong>ESP32 verifies</strong> the password with the central server.</li>
+            <li>✅ If valid, the system activates the <strong>relay channel</strong> to start charging.</li>
+            <li>🖥️ OLED display shows password confirmation, charging time, and energy consumed.</li>
+          </ul>
+        </div>
+
+        <!-- 5 -->
+        <div>
+          <h3 class="text-xl font-semibold mb-2">💳 5. Charging Stop & Billing</h3>
+          <ul class="list-disc ml-6 space-y-1">
+            <li>🛑 On pressing <strong>“Stop Charging”</strong>, the relay turns off automatically.</li>
+            <li>📊 The website calculates:
+              <ul class="list-disc ml-10">
+                <li>⏰ Total charging time</li>
+                <li>⚙️ Energy consumed (kWh)</li>
+                <li>💰 Amount payable (based on rate per kWh)</li>
+              </ul>
+            </li>
+            <li>🧾 A detailed bill is displayed instantly.</li>
+            <li>💳 Users can pay via <strong>Razorpay</strong>, <strong>Paytm</strong>, or other gateways.</li>
+          </ul>
+        </div>
+
+      </div>
+   </section>
+
+   <!-- Stations Section -->
+   <section id="stations" class="p-6 bg-gray-50">
+      <h2 class="text-2xl font-semibold mb-6 text-center">Available Charging Stations ⚡</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-6xl mx-auto">
+
+        <!-- Station 1 -->
+        <div class="bg-white rounded-2xl shadow-lg p-6 border border-gray-200">
+          <h3 class="text-2xl font-semibold mb-3 text-green-700">Station 1 - GreenCity Plaza</h3>
+          <p class="text-gray-600 mb-4">📍 Location: Erode, Tamil Nadu</p>
+          <div class="space-y-3">
+            <div class="bg-gray-100 p-3 rounded-xl flex justify-between items-center">
+              <span>Channel 1</span>
+              <span class="text-green-600 font-semibold">Available</span>
+            </div>
+            <div class="bg-gray-100 p-3 rounded-xl flex justify-between items-center">
+              <span>Channel 2</span>
+              <span class="text-red-500 font-semibold">In Use</span>
+            </div>
+          </div>
+          <button class="mt-6 w-full bg-green-500 hover:bg-green-600 text-black font-semibold py-2 rounded-xl transition">
+            Book a Slot
+          </button>
+        </div>
+
+        <!-- Station 2 -->
+        <div class="bg-white rounded-2xl shadow-lg p-6 border border-gray-200">
+          <h3 class="text-2xl font-semibold mb-3 text-green-700">Station 2 - PowerHub Mall</h3>
+          <p class="text-gray-600 mb-4">📍 Location: Coimbatore, Tamil Nadu</p>
+          <div class="space-y-3">
+            <div class="bg-gray-100 p-3 rounded-xl flex justify-between items-center">
+              <span>Channel 1</span>
+              <span class="text-yellow-500 font-semibold">Charging...</span>
+            </div>
+            <div class="bg-gray-100 p-3 rounded-xl flex justify-between items-center">
+              <span>Channel 2</span>
+              <span class="text-green-600 font-semibold">Available</span>
+            </div>
+          </div>
+          <button class="mt-6 w-full bg-green-500 hover:bg-green-600 text-black font-semibold py-2 rounded-xl transition">
+            Book a Slot
+          </button>
+        </div>
+
+      </div>
+   </section>
+
+   <!-- Contact Section -->
+   <section id="contact" class="p-6 bg-white">
+      <h2 class="text-2xl font-semibold mb-4">Contact</h2>
+      <p class="mb-2">Phone: +91 9788006177, +91 7598658161</p>
+      <p class="mb-2">Email: evconnectindia@gmail.com</p>
+      <p class="mb-2">Address: 31, Mariyamman Kovil Street, P.K. Ganapathipalayam (PO), Tamil Nadu 638153</p>
+      <p><a href="https://www.google.com/maps" target="_blank" class="text-green-700 underline">View on Google Maps</a></p>
+   </section>
+
+   <!-- Footer -->
+   <footer class="bg-green-900 text-white text-center p-4 mt-6">
+      <p>&copy; 2025 EV Connect. All rights reserved.</p>
+   </footer>
+
+  </body>
+</html>
